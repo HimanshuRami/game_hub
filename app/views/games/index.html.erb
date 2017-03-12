@@ -1,3 +1,14 @@
+<% if @categories.present? %>
+  <h2>Categories</h2>
+  <ul>
+    <% @categories.each do |c| %>
+      <li>
+        <%= link_to c.title, games_path(:c_id => c.id) %>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
 <h1>Listing games</h1>
 
 <table>

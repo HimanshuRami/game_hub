@@ -11,7 +11,12 @@ class GamesController < ApplicationController
     # @games = Game.where(:user-id => current_user.id)
     # ------------------------------
     # all games..
-    @games = Game.all 
+    @categories = Category.all
+    if params[:c_id].present?
+      @games = Game.where(:category_id => params[:c_id])
+    else 
+      @games = Game.all
+    end 
     respond_with(@games)
   end
 
@@ -49,6 +54,6 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.require(:game).permit(:name, :price, :category_id, :user_id)
+      params.require(:game).permit(:name, :price, :category_id, :user_id, :image)
     end
 end

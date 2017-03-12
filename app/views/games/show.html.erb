@@ -19,6 +19,13 @@
   <strong>User:</strong>
   <%= @game.user.email %>
 </p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @game.image.url(:medium) %>
+</p>
+
+
 <% if current_user == @game.user %>
 	<%= link_to 'Edit', edit_game_path(@game) %> |
 <% end %>

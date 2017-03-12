@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310150104) do
+ActiveRecord::Schema.define(version: 20170312060329) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20170310150104) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "games", ["category_id"], name: "index_games_on_category_id"
