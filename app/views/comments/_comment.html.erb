@@ -1,0 +1,16 @@
+<p>
+  <strong>
+  	<%= comment.user.firstname.present? ?  comment.user.firstname : comment.user.email%> said :
+  </strong>
+  " <%= comment.message %> "
+</p>
+ 
+
+<% if comment.user_id == current_user.id %>
+	<p>
+	  <%= link_to 'Destroy Comment', [comment.game, comment],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+<br>

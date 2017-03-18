@@ -17,13 +17,22 @@
 
 <p>
   <strong>User:</strong>
-  <%= @game.user.email %>
+  <%= @game.user.firstname %>
 </p>
 
 <p>
   <strong>Image:</strong>
   <%= image_tag @game.image.url(:medium) %>
 </p>
+
+<h2>Comments</h2>
+<%= render @game.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', games_path %> | 
+<%= link_to 'Edit', edit_game_path(@game)%>
 
 
 <% if current_user == @game.user %>

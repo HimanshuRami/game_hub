@@ -1,14 +1,15 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     # to show only login user's games
     # Option-1
-    # @games = current_user.games
+    #@games = current_user.games
     # Option -2 
-    # @games = Game.where(:user-id => current_user.id)
+    # @games = Game.where(:user_id => current_user.id)
+    @games = Game.all
     # ------------------------------
     # all games..
     @categories = Category.all

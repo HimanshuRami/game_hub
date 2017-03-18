@@ -42,5 +42,7 @@ end
 # gem 'capistrano', group: :development
 gem 'devise'
 gem 'faker'
+gem 'omniauth-facebook'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]

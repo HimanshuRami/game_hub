@@ -1,0 +1,16 @@
+<%= form_for([@game, @game.comments.build]) do |f| %>
+  
+  <p>
+    <strong>Commentor:</strong>
+    <%= current_user.firstname %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </p>
+  
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

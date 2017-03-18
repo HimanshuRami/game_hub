@@ -6,6 +6,9 @@
         <%= link_to c.title, games_path(:c_id => c.id) %>
       </li>
     <% end %>
+    <li>
+      <%= link_to "Show all", root_path %>
+    </li>
   </ul>
 
 <% end %>
@@ -30,7 +33,7 @@
         <td><%= game.name %></td>
         <td><%= game.price %></td>
         <td><%= game.category.title %></td>
-        <td><%= game.user.email %></td>
+        <td><%= game.user.firstname %></td>
         <td><%= link_to 'Show', game %></td>
         <% if current_user == game.user %>
           <td><%= link_to 'Edit', edit_game_path(game) %></td>
