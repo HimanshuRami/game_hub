@@ -27,4 +27,20 @@ GameHub::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.app_domain = 'http://localhost:3000'
+
+  # Email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: ENV['gmail_user'],
+    password: ENV['gmail_pass'],
+    authentication: :plain,
+    domain: 'localhost'
+  }
 end
+

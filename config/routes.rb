@@ -3,9 +3,10 @@ GameHub::Application.routes.draw do
  resources :comments
 end
   root "games#index"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :sessions => "devise/sessions" } do
+  devise_for :users, :controllers => {:sessions => "devise/sessions" } do
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

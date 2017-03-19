@@ -43,6 +43,8 @@ end
 gem 'devise'
 gem 'faker'
 gem 'omniauth-facebook'
+gem 'pry-byebug'
+gem "figaro"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

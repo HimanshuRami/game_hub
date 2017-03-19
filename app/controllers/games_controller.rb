@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   respond_to :html, :json
 
   def index
+    # return render :text => ENV['myname'].inspect
     # to show only login user's games
     # Option-1
     #@games = current_user.games
